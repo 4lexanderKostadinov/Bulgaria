@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+    <title>Топ 5 туристически забележителности в България | България</title>
+    <style>
+        :root {
+            --white: #fff;
+            --verylightgrey: #f7f7f7;
+            --lightgrey: #d6d6d6;
+            --grey: #999999;
+            --darkgrey: #646464;
+            --verydarkgrey: #383838;
+            --black: #0a0a0a;
+            --red: #d72009;
+            --orange: #F47C01;
+            --yellow: #FED016;
+            --lightgreen: #00A97B;
+            --green: #00976E;
+            --darkgreen: #008863;
+            --blue: #0088D1;
+            --purple: #9C27B0;
+            --darkpink: #C2175B;
+            --brown: #795548;
+        }
+
+        * {
+            scroll-behavior: smooth;
+            font-family: "Sofia Sans", serif;
+        }
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            
+        }
+
+        .logo-area a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--black);
+        }
+        
+        .logo {
+            max-height: 30px;
+            margin-right: 5px;
+        }
+
+        .site-title {
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        nav img {
+            margin-right: 5px;
+            max-height: 20px;
+        }
+
+        .lang-select {
+            display: flex;
+            align-items: center;
+            border: none;
+            padding: 0;
+            background: none;
+            cursor: pointer;
+        }
+
+        .lang-select select {
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .lang-select img {
+            margin-right: 5px;
+            max-height: 20px;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .listen {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--green);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 6px 12px;
+            font-size: 1rem;
+            gap: 10px;
+        }
+
+        .listen::before {
+            content: '▶️';
+            font-size: 1.2rem;
+        }
+
+        .share-options {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9rem;
+            margin: 15px 0;
+        }
+
+        .share-options span {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .share-options span:hover {
+            color: #333;
+        }
+
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            align-items: center;
+        }
+
+        .section img {
+            flex: 1 1 40%;
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .section p {
+            flex: 1 1 50%;
+            font-size: 1rem;
+        }
+
+        .badge-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .badge-container img {
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--green);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        .gallery {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .gallery:target {
+            display: flex;
+        }
+
+        .gallery img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            text-decoration: none;
+        }
+
+        .nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .nav.prev {
+            left: 20px;
+        }
+
+        .nav.next {
+            right: 20px;
+        }
+
+        .nav:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: black;
+        }
+
+
+        .landmark img {
+            width: 100%;
+            height: auto;
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+
+        .landmark h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            margin-bottom: 0;
+        }
+
+        .landmark img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .landmark p {
+            font-size: 16px;
+            color: #555;
+            margin: 0;
+        }
+
+        footer {
+            margin-top: 60px;
+            background-color: var(--verylightgrey);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-left img {
+            height: 24px;
+        }
+
+        .footer-left span {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .footer-right a {
+            color: var(--darkgrey);
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .footer-right a:hover {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <nav>
+                <ul>
+                    <li><a href="#"><img src="./icons/ham_menu.png" alt="Menu">Menu</a></li>
+                </ul>
+            </nav>
+            <div class="logo-area">
+                <a href="index.html"><img class="logo" src="bglionsvg.svg" alt="Лого на Посетете България">
+                <span class="site-title">България</span></a>
+            </div>
+            <div class="lang-select">
+                <img class="search-icon" src="./icons/search.png" alt="Search">
+                <select>
+                    <option>Български</option>
+                    <option>English</option>
+                </select>
+            </div>
+        </div>
+    </header>
+    <main>
+        <main>
+            <h1>Топ 5 туристически забележителности в България</h1>
+            <a href="#" class="listen">Слушай (5 мин)</a>
+            <p>България е завладяваща дестинация, изпълнена с вдъхновяващи природни чудеса, древни забележителности и
+                разнообразни културни съкровища. От величествените върхове на Стара планина до спокойните брегове на Черно
+                море, страната предлага невероятна смесица от преживявания за всеки пътешественик.</p>
+            <p>Освен със своята природна красота, България е известна и с богатото си културно наследство, дълбоко вкоренено
+                в традиции, архитектура и исторически забележителности. Всеки регион разказва своя уникална история, която
+                ни отвежда в миналото, оформило настоящето й.</p>
+        
+            <div class="share-options">
+                <span>📤 Сподели</span>
+                <span>🔖 Запази</span>
+                <span>⏱️ 5 мин четене</span>
+            </div>
+            <div class="landmark">
+                <h2>№1 Пещера Ледника</h2>
+                <div class="section">
+                    <div class="badge-container">
+                        <a href="#img1-ledenika">
+                            <img src="sights/ledenikacave/LC1.png" alt="Пещера Леденика">
+                        </a>
+                        <span class="badge">3+</span>
+                    </div>
+                    <p>Сгушена в зашеметяващата Стара планина, пещерата Леденика е природно чудо, което оставя посетителите
+                        без думи. Известна със своите хипнотизиращи сталактити и сталагмити, уникалните образувания в
+                        пещерата създават вълшебен подземен пейзаж. Сред най-интересните места е „Концертната зала“, където
+                        акустиката е толкова забележителна, че тук са се провеждали концерти. Посещението на Леденика е
+                        пътешествие в свят на природно изкуство и геоложки чудеса.
+                    </p>
+        
+                    <div class="gallery" id="img1-ledenika">
+                        <a href="#" class="close">&times;</a>
+                        <a href="#img3-ledenika" class="nav prev">❮</a>
+                        <img src="sights/ledenikacave/LC1.png" alt="Леденика 1">
+                        <a href="#img2-ledenika" class="nav next">❯</a>
+                    </div>
+        
+                    <div class="gallery" id="img2-ledenika">
+                        <a href="#" class="close">&times;</a>
+                        <a href="#img1-ledenika" class="nav prev">❮</a>
+                        <img src="sights/ledenikacave/LC2.png/LC2.png" alt="Леденика 2">
+                        <a href="#img3-ledenika" class="nav next">❯</a>
+                    </div>
+        
+                    <div class="gallery" id="img3-ledenika">
+                        <a href="#" class="close">&times;</a>
+                        <a href="#img2-ledenika" class="nav prev">❮</a>
+                        <img src="sights/ledenikacave/LC3.png/LC3.png" alt="Леденика 3">
+                        <a href="#img1-ledenika" class="nav next">❯</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="landmark">
+                <h2>№2 Скален манастир Хан Крум</h2>
+                <div class="section">
+                    <div class="badge-container">
+                        <a href="#img1-hankrum">
+                            <img src="sights/rockmonastery/RM1.png" alt="Скален манастир Хан Крум">
+                        </a>
+                        <span class="badge">3+</span>
+                    </div>
+                    <p>Скалният манастир Хан Крум, кацнал на скали с изглед към пищна зеленина, е завладяваща смесица от
+                        история, духовност и природна красота. Това древно място, издълбано в скалите, е служило за духовно
+                        убежище на монасите преди векове. Спокойната му атмосфера и панорамните гледки го правят идеално
+                        място за размисъл и изследване. Не пропускайте сложните дърворезби и древните надписи, които
+                        разказват истории за една отминала епоха.</p>
+        
+                    <div class="gallery" id="img1-hankrum">
+                        <a href="#" class="close">&times;</a>
+                        <a href="#img3-hankrum" class="nav prev">❮</a>
+                        <img src="sights/rockmonastery/RM1.png" alt="Скален манастир Хан Крум 1">
+                        <a href="#img2-hankrum" class="nav next">❯</a>
+                    </div>
+        
+                    <div class="gallery" id="img2-hankrum">
+                        <a href="#" class="close">&times;</a>
+                        <a href="#img1-hankrum" class="nav prev">❮</a>
+                        <img src="sights/rockmonastery/RM2.png" alt="Скален манастир Хан Крум 2">
+                        <a href="#img3-hankrum" class="nav next">❯</a>
+                    </div>
+        
+                    <div class="gallery" id="img3-hankrum">
+                        <a href="#" class="close">&times;</a>
+                        <a href="#img2-hankrum" class="nav prev">❮</a>
+                        <img src="sights/rockmonastery/RM3.png" alt="Скален манастир Хан Крум 3">
+                        <a href="#img1-hankrum" class="nav next">❯</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="landmark">
+                <h2>№3 Природна местност Карандила</h2>
+                <div class="section">
+                    <div class="badge-container">
+                        <a href="#img1-karandila">
+                            <img src="sights/karandilaarea/KA1.png" alt="Природна местност Карандила">
+                        </a>
+                        <span class="badge">3+</span>
+                    </div>
+                    <p>Карандила е зашеметяващ природен район, разположен в Стара планина близо до Сливен, България.
+                        Известен със своите спиращи дъха пейзажи, районът предлага гъсти гори, панорамни гледки и спокойни
+                        туристически пътеки. Посетителите могат да разгледат емблематичното образувание Сините скали, да се
+                        качат на живописен седалков лифт или да се насладят на пикник в спокойна обстановка. Рай за
+                        любителите на природата, Карандила е идеален за дейности на открито и спокойно бягство сред
+                        природната красота на България.</p>
+        
+                    <div class="gallery" id="img1-karandila">
+                        <a href="#" class="close">&times;</a>
+                        <a href="#img3-karandila" class="nav prev">❮</a>
+                        <img src="sights/karandilaarea/KA1.png" alt="Карандила 1">
+                        <a href="#img2-karandila" class="nav next">❯</a>
+                    </div>
+        
+                    <div class="gallery" id="img2-karandila">
+                        <a href="#" class="close">&times;</a>
+                        <a href="#img1-karandila" class="nav prev">❮</a>
+                        <img src="sights/karandilaarea/KA2.png" alt="Карандила 2">
+                        <a href="#img3-karandila" class="nav next">❯</a>
+                    </div>
+        
+                    <div class="gallery" id="img3-karandila">
+                        <a href="#" class="close">&times;</a>
+                        <a href="#img2-karandila" class="nav prev">❮</a>
+                        <img src="sights/karandilaarea/KA3.png" alt="Карандила 3">
+                        <a href="#img1-karandila" class="nav next">❯</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="landmark">
+                <h2>№4 Дряновски манастир</h2>
+                <div class="section">
+                    <div class="badge-container">
+                        <a href="#img1-dryanovo">
+                            <img src="sights/dryanovskimonastery/DM1.png" alt="Дряновски манастир">
+                        </a>
+                        <span class="badge">3+</span>
+                    </div>
+                    <p>Дряновският манастир, намиращ се близо до Дряново, България, е историческа и духовна забележителност,
+                        заобиколена от живописната Стара планина. Основан през XII в., той играе важна роля по време на
+                        борбата на България за независимост. Манастирът е известен със спокойната си обстановка, красиво
+                        запазената архитектура и близостта до пещерата Бачо Киро и река Андъка. Посетителите могат да
+                        разгледат богатата му история, да се възхитят на стенописите или да се насладят на спокойната
+                        природа, което го прави популярна дестинация за пътешественици.
+                    </p>
+        
+                    <div class="gallery" id="img1-dryanovo">
+                        <a href="#" class="close">&times;</a>
+                        <a href="#img3-dryanovo" class="nav prev">❮</a>
+                        <img src="sights/dryanovskimonastery/DM1.png" alt="Дряновски манастир 1">
+                        <a href="#img2-dryanovo" class="nav next">❯</a>
+                    </div>
+        
+                    <div class="gallery" id="img2-dryanovo">
+                        <a href="#" class="close">&times;</a>
+                        <a href="#img1-dryanovo" class="nav prev">❮</a>
+                        <img src="sights/dryanovskimonastery/DM2.png" alt="Дряновски манастир 2">
+                        <a href="#img3-dryanovo" class="nav next">❯</a>
+                    </div>
+        
+                    <div class="gallery" id="img3-dryanovo">
+                        <a href="#" class="close">&times;</a>
+                        <a href="#img2-dryanovo" class="nav prev">❮</a>
+                        <img src="sights/dryanovskimonastery/DM3.png" alt="Дряновски манастир 3">
+                        <a href="#img1-dryanovo" class="nav next">❯</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="landmark">
+                <h2>№5 Връх Костенурката</h2>
+                <div class="section">
+                    <div class="badge-container">
+                        <a href="#img1-turtlepeak">
+                            <img src="sights/turtlepeak/TP1.png" alt="Връх Костенурката">
+                        </a>
+                        <span class="badge">3+</span>
+                    </div>
+                    <p>Връх Костенурка, наречен така заради приликата си с гигантска костенурка, е скрито бижу за любителите
+                        на природата и приключенията. Този характерен планински връх предлага панорамна гледка към околните
+                        долини и гори. Уникалната му форма и спокойната обстановка го превръщат в любимо място за фотография
+                        и туризъм. Независимо дали ще се изкачите до върха, или ще му се любувате отдолу, връх Костенурка
+                        със сигурност ще остави трайно впечатление.
+                    </p>
+                    <div class="gallery" id="img1-turtlepeak">
+                        <a href="#" class="close">&times;</a>
+                        <a href="#img3-turtlepeak" class="nav prev">❮</a>
+                        <img src="sights/turtlepeak/TP1.png" alt="Връх Костенурката 1">
+                        <a href="#img2-turtlepeak" class="nav next">❯</a>
+                    </div>
+        
+                    <div class="gallery" id="img2-turtlepeak">
+                        <a href="#" class="close">&times;</a>
+                        <a href="#img1-turtlepeak" class="nav prev">❮</a>
+                        <img src="sights/turtlepeak/TP2.png" alt="Връх Костенурката 2">
+                        <a href="#img3-turtlepeak" class="nav next">❯</a>
+                    </div>
+        
+                    <div class="gallery" id="img3-turtlepeak">
+                        <a href="#" class="close">&times;</a>
+                        <a href="#img2-turtlepeak" class="nav prev">❮</a>
+                        <img src="sights/turtlepeak/TP3.png" alt="Връх Костенурката 3">
+                        <a href="#img1-turtlepeak" class="nav next">❯</a>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="bglionsvg.svg" alt="Лого на България">
+                <span>България</span>
+            </div>
+            <div class="footer-right">
+                <a href="index.html">Начало</a>
+                <a href="blog.html">Блог</a>
+                <a href="about_us.html">За нас</a>
+                <a href="#">Условия за ползване</a>
+                <!-- <a href="Health & Safety">Здраве и безопасност</a> -->
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" ="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+    <title>За нас | България</title>
+    <style>
+        :root {
+            --white: #fff;
+            --verylightgrey: #f7f7f7;
+            --lightgrey: #d6d6d6;
+            --grey: #999999;
+            --darkgrey: #646464;
+            --verydarkgrey: #383838;
+            --black: #0a0a0a;
+            --red: #d72009;
+            --orange: #F47C01;
+            --yellow: #FED016;
+            --lightgreen: #00A97B;
+            --green: #00976E;
+            --darkgreen: #008863;
+            --blue: #0088D1;
+            --purple: #9C27B0;
+            --darkpink: #C2175B;
+            --brown: #795548;
+        }
+
+        * {
+            scroll-behavior: smooth;
+            font-family: "Sofia Sans", serif;
+        }
+
+
+        body {
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid var(--lightgrey);
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        nav img {
+            margin-right: 5px;
+            max-height: 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-area a {
+            display: flex;
+            align-items: center;
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        .logo {
+            max-height: 30px;
+            margin-right: 5px;
+        }
+
+        .site-title {
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        .lang-select {
+            display: flex;
+            align-items: center;
+            border: none;
+            padding: 0;
+            background: none;
+            cursor: pointer;
+        }
+
+        .lang-select select {
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .lang-select img {
+            margin-right: 5px;
+            max-height: 20px;
+        }
+
+        .search-icon {
+            max-height: 20px;
+            margin-right: 5px;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 0px 60px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        .hero-text {
+            flex: 1.5;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5em;
+        }
+
+        .hero-text p {
+            font-size: 1.2em;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 400px;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .team {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+            flex: 1 0 250px;
+        }
+
+        .team-member img {
+            max-width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--lightgrey);
+        }
+
+        .team-member h3 {
+            font-size: 1.5em;
+            margin-bottom: 0px;
+        }
+
+        .team-member p {
+            margin-top: 4px;
+            font-size: 1.25em;
+        }
+
+        footer {
+            background-color: var(--verylightgrey);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-left img {
+            height: 24px;
+        }
+
+        .footer-left span {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .footer-right a {
+            color: var(--darkgrey);
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .footer-right a:hover {
+            color: var(--green);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <nav>
+                    <ul>
+                        <li><a href="#"><img src="./icons/ham_menu.png" alt="Menu">Menu</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="logo-area">
+                    <a href="index.html">
+                        <img class="logo" src="bglionsvg.svg" alt="Лого на Посетете България">
+                        <span class="site-title">България</span>
+                    </a>
+
+                </div>
+                <div class="lang-select">
+                    <img class="search-icon" src="./icons/search.png" alt="Search">
+                    <select>
+                        <option>Български</option>
+                        <option>English</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Запознайте се с нашия екип от създатели, дизайнери и решаващи проблеми на световно ниво</h1>
+                <p>Открийте създателите на „Посетете България“ и не се колебайте да се свържете с нас за всякакви
+                    запитвания, обратна връзка или възможности за сътрудничество.</p>
+            </div>
+            <div class="hero-image">
+                <img src="bglionsvg.svg" alt="Лъв">
+            </div>
+        </section>
+
+        <section class="team">
+            <div class="team-member">
+                <img src="./people/manager.png" alt="Валери Станев">
+                <h3>Валери Станев</h3>
+                <p>Ръководител</p>
+            </div>
+            <div class="team-member">
+                <img src="./people/designer.png" alt="Александър Костадинов">
+                <h3>Александър Костадинов</h3>
+                <p>Дизайнер</p>
+            </div>
+            <div class="team-member">
+                <img src="./people/programmer.png" alt="Веселин Младенов">
+                <h3>Веселин Младенов</h3>
+                <p>Програмист</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="bglionsvg.svg" alt="Лого на България">
+                <span>България</span>
+            </div>
+            <div class="footer-right">
+                <a href="index.html">Начало</a>
+                <a href="blog.html">Блог</a>
+                <a href="about_us.html">За нас</a>
+                <a href="#">Условия за ползване</a>
+                <!-- <a href="Health & Safety">Здраве и безопасност</a> -->
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+    <title>Блог | България</title>
+    <style>
+        :root {
+            --white: #fff;
+            --verylightgrey: #f7f7f7;
+            --lightgrey: #d6d6d6;
+            --grey: #999999;
+            --darkgrey: #646464;
+            --verydarkgrey: #383838;
+            --black: #0a0a0a;
+            --red: #d72009;
+            --orange: #F47C01;
+            --yellow: #FED016;
+            --lightgreen: #00A97B;
+            --green: #00976E;
+            --darkgreen: #008863;
+            --blue: #0088D1;
+            --purple: #9C27B0;
+            --darkpink: #C2175B;
+            --brown: #795548;
+        }
+        * {
+            scroll-behavior: smooth;
+            font-family: "Sofia Sans", serif;
+        }
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid var(--lightgrey);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-area a {
+            display: flex;
+            align-items: center;
+            color: var(--black);
+        }
+
+        .logo {
+            max-height: 30px;
+            margin-right: 5px;
+        }
+
+        .site-title {
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        nav img {
+            margin-right: 5px;
+            max-height: 20px;
+        }
+
+        .lang-select {
+            display: flex;
+            align-items: center;
+            border: none;
+            padding: 0;
+            background: none;
+            cursor: pointer;
+        }
+
+        .lang-select select {
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .lang-select img {
+            margin-right: 5px;
+            max-height: 20px;
+        }
+
+        .content {
+            margin-bottom: 100px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card .text {
+            padding: 15px;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .card p {
+            font-size: 0.9em;
+            color: var(--darkgrey);
+        }
+
+        footer {
+            background-color: var(--verylightgrey);
+            margin-top: 60px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-left img {
+            height: 24px;
+        }
+
+        .footer-left span {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .footer-right a {
+            color: var(--darkgrey);
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .footer-right a:hover {
+            color: var(--green);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <nav>
+                <ul>
+                    <li><a href="#"><img src="./icons/ham_menu.png" alt="Menu">Menu</a></li>
+                </ul>
+            </nav>
+            <div class="logo-area">
+                <a href="index.html">
+                    <img class="logo" src="bglionsvg.svg" alt="Лого на Посетете България">
+                    <span class="site-title">България</span>
+                </a>
+            </div>
+            <div class="lang-select">
+                <img class="search-icon" src="./icons/search.png" alt="Search">
+                <select>
+                    <option>Български</option>
+                    <option>English</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="grid">
+            <div class="card">
+                <a href="article.html"><img src="sights/dryanovskimonastery/DM1.png" alt="Топ 5 забележителности">
+                    <div class="text">
+                        <h3>Топ 5 забележителности, които да посетите</h3>
+                        <p>Открийте най-добрите места за посещение в България.</p>
+                    </div>
+                </a>
+
+            </div>
+            <div class="card">
+                <img src="sights/festival.png" alt="Българските фестивали">
+                <div class="text">
+                    <h3>Българските фестивали, които не трябва да изпуснете</h3>
+                    <p>Запознайте се с културните традиции на страната.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="sights/rockmonastery/RM1.png" alt="Българските манастири">
+                <div class="text">
+                    <h3>Българските манастири и къде са те?</h3>
+                    <p>Потопете се в духовната атмосфера на манастирите.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="sights/karandilaarea/КА2.png" alt="Нека опознаем България заедно">
+                <div class="text">
+                    <h3>Нека опознаем България заедно</h3>
+                    <p>Изследвайте природните и културни забележителности.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="sights/treasures.png" alt="Скритите Съкровища на България">
+                <div class="text">
+                    <h3>Скритите Съкровища на България</h3>
+                    <p>Невероятни съкровища, датиращи от времето Римските императори.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="sights/mountains.png" alt="Най-Красивите Планини в България за Туризъм и Приключения">
+                <div class="text">
+                    <h3>Най-Красивите Планини в България за Туризъм и Приключения</h3>
+                    <p>Вдъхновяващи маршрути за любители на природата и екстремните спортове.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="sights/sinemorets.jpg" alt="Черноморието на България: Плажове, Които Ще Ви Очароват">
+                <div class="text">
+                    <h3>Черноморието на България: Плажове, Които Ще Ви Очароват</h3>
+                    <p>Най-добрите места за слънце, море и релакс.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="sights/dishes.png" alt="Най-Вкусните Български Ястия, Които Трябва да Опитате">
+                <div class="text">
+                    <h3>Най-Вкусните Български Ястия, Които Трябва да Опитате</h3>
+                    <p>Кулинарно пътешествие из българската кухня и традиции.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="sights/city.png" alt="Уикенд Екскурзии: Най-Добрите Градове за Кратки Почивки">
+                <div class="text">
+                    <h3>Уикенд Екскурзии: Най-Добрите Градове за Кратки Почивки</h3>
+                    <p>Топ дестинации за бягство през уикенда.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="sights/trails.png" alt="Еко Туризъм: Най-Добрите Природни Резервати на България">
+                <div class="text">
+                    <h3>Еко Туризъм: Най-Добрите Природни Резервати на България</h3>
+                    <p>Природни райове за релакс и приключения сред дивата природа.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="bglionsvg.svg" alt="Лого на България">
+                <span>България</span>
+            </div>
+            <div class="footer-right">
+                <a href="index.html">Начало</a>
+                <a href="blog.html">Блог</a>
+                <a href="about_us.html">За нас</a>
+                <a href="#">Условия за ползване</a>
+                <!-- <a href="Health & Safety">Здраве и безопасност</a> -->
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

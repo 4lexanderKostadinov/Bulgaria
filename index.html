@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+    <title>Начало | България</title>
+    <style>
+        :root {
+            --white: #fff;
+            --verylightgrey: #f7f7f7;
+            --lightgrey: #d6d6d6;
+            --grey: #999999;
+            --darkgrey: #646464;
+            --verydarkgrey: #383838;
+            --black: #0a0a0a;
+            --red: #d72009;
+            --orange: #F47C01;
+            --yellow: #FED016;
+            --lightgreen: #00A97B;
+            --green: #00976E;
+            --darkgreen: #008863;
+            --blue: #0088D1;
+            --purple: #9C27B0;
+            --darkpink: #C2175B;
+            --brown: #795548;
+        }
+
+        * {
+            scroll-behavior: smooth;
+            font-family: "Sofia Sans", serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-area a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--black);
+        }
+
+        .logo {
+            max-height: 30px;
+            margin-right: 5px;
+        }
+
+        .site-title {
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        nav img {
+            margin-right: 5px;
+            max-height: 20px;
+        }
+
+        .lang-select {
+            display: flex;
+            align-items: center;
+            border: none;
+            padding: 0;
+            background: none;
+            cursor: pointer;
+        }
+
+        .lang-select select {
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .lang-select img {
+            margin-right: 5px;
+            max-height: 20px;
+        }
+
+        .hero {
+            margin-top: 0;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .hero img {
+            width: 100%;
+            height: auto;
+            filter: brightness(0%);
+            filter: saturate(200%)
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin: 0;
+        }
+
+        .hero-text p {
+            font-size: 1.75rem;
+        }
+
+        .hero-text a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: var(--green);
+            color: white;
+            text-decoration: none;
+            font-size: 2rem;
+            border-radius: 5px;
+        }
+
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .hero img {
+            width: 100%;
+            height: auto;
+            filter: brightness(75%) saturate(125%);
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .hero-text h2 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .hero-text a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: white;
+            background-color: var(--lightgreen);
+            text-decoration: none;
+            font-size: 1.5rem;
+            border-radius: 5px;
+        }
+
+        .features {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .features h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .features p {
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .stats div {
+            text-align: center;
+            flex: 1 1 100px;
+        }
+
+        .stats div img {
+            padding: 20px;
+            border-radius: 100%;
+            background-color: var(--verylightgrey);
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .hotels {
+            text-align: center;
+            padding: 40px 20px;
+            padding-top: 0;
+            margin-bottom: 40px;
+        }
+
+        .hotels h2 {
+            font-size: 2rem;
+            /* margin-top: 2; */
+            margin-bottom: 60px;
+        }
+
+        .hotel-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .hotel-item {
+            border: 1px solid var(--lightgrey);
+            border-radius: 5px;
+            overflow: hidden;
+            width: 240px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .hotel-item img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .hotel-item p {
+            margin: 10px;
+            font-size: 1.1rem;
+        }
+
+        .travel-section {
+            position: relative;
+            text-align: left;
+            color: white;
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .travel-section .image-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .travel-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            filter: brightness(95%) saturate(110%);
+        }
+
+        .travel-section .text-overlay {
+            position: absolute;
+            padding: 20px;
+            border: 1px var(--white) solid;
+            border-radius: 10px;
+            top: 100px;
+            left: 60px;
+            width: 40%;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+        }
+
+        .travel-section .text-overlay h2 {
+            font-size: 2.5rem;
+            margin: 0;
+            margin-bottom: 24px;
+        }
+
+        .travel-section .text-overlay p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+        }
+
+        .travel-section .highlight {
+            position: absolute;
+            bottom: 50px;
+            right: 100px;
+            border: 2px solid white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .travel-section .highlight p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .travel-section .rectangle {
+            position: absolute;
+            bottom: 80px;
+            right: 140px;
+            width: 200px;
+            height: 120px;
+            border: 2px solid white;
+            border-radius: 5px;
+        }
+
+        .blog-section {
+            padding: 40px 20px;
+            margin-bottom: 60px;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .blog-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-header p {
+            max-width: 600px;
+            margin: 0 auto 20px;
+            margin-top: 16px;
+            font-size: 1.2rem;
+            color: var(--black);
+        }
+
+        .blog-header .blog-link {
+            display: inline-block;
+            margin-top: 20px;
+            margin-bottom: 32px;
+            padding: 10px 20px;
+            background-color: var(--green);
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            font-weight: 300;
+        }
+
+        .blog-cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .blog-card {
+            width: 300px;
+            border: 1px solid var(--lightgrey);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: var(--white);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 15px;
+        }
+
+        .blog-card-content h3 {
+            font-size: 1.2rem;
+            margin: 0 0 10px;
+        }
+
+        .blog-card-content p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--verydarkgrey);
+            margin-top: 12px;
+        }
+
+        footer {
+            background-color: var(--verylightgrey);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-left img {
+            height: 24px;
+        }
+
+        .footer-left span {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .footer-right a {
+            color: var(--darkgrey);
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .footer-right a:hover {
+            color: var(--green);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <nav>
+                <ul>
+                    <li><a href="#"><img src="./icons/ham_menu.png" alt="Menu">Menu</a></li>
+                </ul>
+            </nav>
+            <div class="logo-area">
+                <a href="index.html">
+                    <img class="logo" src="bglionsvg.svg" alt="Лого на Посетете България">
+                    <span class="site-title">България</span>
+                </a>
+            </div>
+            <div class="lang-select">
+                <img class="search-icon" src="./icons/search.png" alt="Search">
+                <select>
+                    <option>Български</option>
+                    <option>English</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <img src="church.png" alt="Катедралата Александър Невски">
+        <div class="hero-text">
+            <h1>Опознай България</h1>
+            <p>Насладете се на вечната красота и богати традиции</p>
+            <a href="#features">Открийте България</a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2>Една страна, безкрайни приключения</h2>
+        <p>България предлага всичко - от величествени планини до целунати от слънцето брегове.</p>
+        <div class="stats">
+            <div>
+                <img src="./icons/sight.png" alt="Икона на забележителности">
+                <p><strong>9000+ <br></strong>Забележителности</p>
+            </div>
+            <div>
+                <img src="./icons/restaurant.png" alt="Икона на ресторанти">
+                <p><strong>8600+<br></strong>Ресторанта</p>
+            </div>
+            <div>
+                <img src="./icons/hotel.png" alt="Икона на хотели">
+                <p><strong>7000+<br></strong>Хотела</p>
+            </div>
+            <div>
+                <img src="./icons/hike.png" alt="Икона на екопътеки">
+                <p><strong>2400+<br></strong>Екопътеки</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="hotels">
+        <h2>Най-популярните места за настаняване</h2>
+        <div class="hotel-list">
+            <div class="hotel-item">
+                <img src="hotels/blacksearama.png" alt="BlackSeaRama">
+                <p><strong>BlackSeaRama</strong><br>€ 100 / Вечер</p>
+            </div>
+            <div class="hotel-item">
+                <img src="hotels/astorgarden.png" alt="Астор Гардън Хотел">
+                <p><strong>Астор Гардън Хотел</strong><br>€ 120 / Вечер</p>
+            </div>
+            <div class="hotel-item">
+                <img src="hotels/residencecitygarden.png" alt="Резиденс Сити Гардън">
+                <p><strong>Резиденс Сити Гардън</strong><br>€ 60 / Вечер</p>
+            </div>
+            <div class="hotel-item">
+                <img src="hotels/rilahotel.png" alt="Рила Хотел">
+                <p><strong>Рила Хотел</strong><br>€ 75 / Вечер</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="travel-section">
+        <div class="image-container">
+            <img src="sights/varnalighth.jpg" alt="Фарът на пристанище Варна">
+            <div class="text-overlay">
+                <h2>Насладете се на пътуването Ви</h2>
+                <p>Открийте най-уникалните и динамични преживявания, които Варна може да предложи</p>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="blog-section">
+        <div class="blog-header">
+            <h2>Блог за пътувания в нашата България</h2>
+            <p>Открийте величествените планини, златните плажове и вечните традиции на България - земя, в която
+                историята и природата живеят в хармония.</p>
+            <a href="blog.html" class="blog-link">Виж всички статии</a>
+        </div>
+
+        <div class="blog-cards-container">
+            <div class="blog-card">
+                <img src="sights/dryanovskimonastery/DM1.png" alt="Топ 5 забележителности за посещение">
+                <div class="blog-card-content">
+                    <h3>Топ 5 забележителности в България</h3>
+                    <p>Забележителности | Съвети</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="sights/festival.png" alt="Българските фестивали, които не можете да пропуснете">
+                <div class="blog-card-content">
+                    <h3>Българските фестивали, които не трябва да изпуснете</h3>
+                    <p>Култура | Настроение</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="sights/sinemorets.jpg" alt="Българските манастири">
+                <div class="blog-card-content">
+                    <h3>Българските манастири и къде са те?</h3>
+                    <p>История | Религия</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero">
+        <img src="sights/tarnovo.jpg" alt="Велико Търново">
+        <div class="hero-text">
+            <h2>Нека опознаем България</h2>
+            <a href="blog.html">Научете повече</a>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="bglionsvg.svg" alt="Лого на България">
+                <span>България</span>
+            </div>
+            <div class="footer-right">
+                <a href="index.html">Начало</a>
+                <a href="blog.html">Блог</a>
+                <a href="about_us.html">За нас</a>
+                <a href="#">Условия за ползване</a>
+                <!-- <a href="Health & Safety">Здраве и безопасност</a> -->
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
